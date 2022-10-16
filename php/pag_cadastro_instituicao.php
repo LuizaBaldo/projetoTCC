@@ -31,54 +31,52 @@
         <div class="container_main">
             <div class="row justify-content-center">
                 <div class="card w-75" style="background-color: #66C4A9;">
-                    <h1 class="text-center" style="color: white;">Cadastrar Instituição</h1>
+                    <h1 class="text-center">Cadastrar Instituição</h1>
 
                     <div class="card-header" id="formulario">
                         <form method="post" action="pag_cadastro_instituicao.php?salvar=1" id="formCadastroInst">
 
-                        <div class="form" style="width:70%;margin:auto;">
+                        <div class="form-row" style="width:70%;margin:auto;">
                             <div class="row">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Nome</label>
-                                    <input type="text" class="form-control" id="txtNome" placeholder="Digite o nome da instituição" name="nome"/>
+                                    <label class="form-label">Nome</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtNome" placeholder="Digite o nome da instituição" name="nome"/>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Email</label>
-                                    <input type="email" class="form-control" id="txtEmail" placeholder="Digite o email da instituição" name="email"/>
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control form-control-sm" id="txtEmail" placeholder="Digite o email da instituição" name="email"/>
+                                </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">CNPJ</label>
+                                        <input type="text" class="form-control form-control-sm" id="txtCNPJ" placeholder="Digite o CNPJ da instituição" name="cnpj"/>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Telefone</label>
+                                        <input type="text" class="form-control form-control-sm" placeholder="Digite o telefone da instituição" id="nrTelefone" name="telefone"/>
+                                    </div>                                  
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Endereço</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Digite o endereço da instituição" id="txtEndereco" name="endereco"/>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Senha</label>
+                                    <input type="password" class="form-control form-control-sm" placeholder="Digite uma senha" id="txtSenha" name="senha"/>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label" style="color: white;">CNPJ</label>
-                                    <input type="text" class="form-control" id="txtCNPJ" placeholder="Digite o CNPJ da instituição" name="cnpj"/>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Confirme a senha</label>
+                                    <input type="password" class="form-control form-control-sm" placeholder="Confirme a senha" id="txtConfirSenha" name="confirmaSenha"/>
                                 </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Endereço</label>
-                                    <input type="text" class="form-control" placeholder="Digite o endereço da instituição" id="txtEndereco" name="endereco"/>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Telefone</label>
-                                    <input type="text" class="form-control" placeholder="Digite o telefone da instituição" id="nrTelefone" name="telefone"/>
-                                </div> 
-
-                                <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Senha</label>
-                                    <input type="password" class="form-control" placeholder="Digite uma senha" id="txtSenha" name="senha"/>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label" style="color: white;">Confirme a senha</label>
-                                    <input type="password" class="form-control" placeholder="Confirme a senha" id="txtConfirSenha" name="confirmaSenha"/>
-                                </div>
+                              
 
                             </div>
 
                             <br/>
 
                             <div class="mb-3">
-                                <div class="d-grid gap-2 col-6 mx-auto" style="background-color: #4C79D5;">
+                                <div class="d-grid gap-2 col-6 mx-auto rounded" style="background-color: #4C79D5;">
                                     <button type="button" class="btn text-white" id="btnCadastrar" name="btnCadastrar" onclick="validar();">Cadastrar</button>
                                 </div>
                             </div>
