@@ -44,7 +44,7 @@
         ?>
         
         <div class="container_main"> 
-            <div class="d-flex flex-wrap align-content-center">
+            <div class="d-flex flex-wrap align-content-center justify-content-between">
                 <?php foreach ($instituicoes as $instituicao){
                     $nome_inst = $instituicao['nome'];
                     $endereco_inst = $instituicao['endereco'];
@@ -66,13 +66,13 @@
                 // TESTE CARD 
                 echo '<div class="container_exibir p-5">';
                     echo '<div class="row">';
-                        echo '<div class="card" style="width:300px">';
-                            echo '<img class="card-img-top" src="../img/img_avatar1.png" alt="Card image">';
+                        echo '<div class="card" style="width:300px; background-color: #66C4A9;">';
+                            echo '<img class="card-img-top pt-2 rounded" src="../img/img_avatar1.png" alt="Card image">';
                             echo '<div class="card-body">';
-                                echo '<h4 class="card-title">' .$nome_inst; '</h4>';
-                                echo '<p class="card-text">' .$endereco_inst; '</p>';
+                                echo '<h4 class="card-title">Nome: '  .$nome_inst; '</h4>';
+                                echo '<p class="card-text">Endereço: ' .$endereco_inst; '</p>';
                                 echo '<p>';
-                                echo '<a href="pag_exibir_instituicao.php?id='.$instituicao['id'].'" ; style="text-decoration: none; color:inherit;">Veja Mais</a>';
+                                echo '<a href="pag_exibir_instituicao.php?id='.$instituicao['id'].'" ; style="text-decoration: none; color: #4C79D5;">Veja mais...</a>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';

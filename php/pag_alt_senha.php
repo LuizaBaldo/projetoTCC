@@ -59,11 +59,11 @@
                             </div>
 
                         <br/>
-
-                            <div class="mt-3">
-                                <div class="d-grid gap-2 col-6 mx-auto rounded" style="background-color: #4C79D5;">
-                                    <button type="button" class="btn text-white" id="btnAlterar" name="btnAlterar" onclick="validar();">Alterar</button>
-                                </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <a href="pag_usuario.php">
+                                    <button type="button" class="btn btn-danger mt-2" id="btnCancelarCadastro" name="btnCancelarCadastro" onclick="voltar()">Cancelar</button>
+                                </a>
+                                <button type="button" class="btn btn-primary mt-2" id="btnAlterar" name="btnAlterar" onclick="validar();">Alterar</button>
                             </div>
 
                         </div>

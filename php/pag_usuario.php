@@ -41,48 +41,40 @@
             require_once './partials/common.php';
         ?>
         
-        <div class="container_usuario" style="padding-left: 20rem; padding-top: 2rem;">
-            <div class="card w-75 p-0" style="background-color: #66C4A9; height: 34rem;">
-                <div class="row">
+        <div class="container_usuario container">
+                <div class="row rounded py-2" style="background-color: #66C4A9;">
                     <div class="col-4">
-                        <div class="container_img" style="text-align: center; padding-left: 3rem;">
-                            <img class="card-img-left" src="../img/img_avatar1.png" alt="Card img" id="usuario_foto" style="width: 300px; padding-top: 1rem;">
+                        <div class="container_img">
+                            <img class="rounded" src="../img/img_avatar1.png" alt="" id="usuario_foto" style="width: 100%;">
                         </div>
-                        
-                        <div class="container_buttoms" style="text-align: center; padding-left: 6rem;">
-                            <a href="pag_alt_dados.php">
-                                <button type="button" class="btn mt-3 mb-1" id="btnAltCadastrar" name="btnAltCadastrar" style="background-color: #4C79D5; color: white;">Alterar Cadastro</button>  
-                            </a>
-                            <p>
-                            <p>
-                            <a href="pag_alt_senha.php">
-                                <button type="button" class="btn mb-1" id="btnAltSenha" name="btnAltSenha" style="background-color: #4C79D5; color: white;">Alterar Senha</button>                        
-                            </a>                 
-                            <p>
-                            <form method="post" onsubmit="return confirm('Você tem certeza que deseja apagar este perfil?');" action="pag_usuario.php?deletar=<?php echo $user['id'];?>">
-                                <button type="submit" class="btn" id="btnExcluir" name="btnExcluir" style="background-color: #4C79D5; color: white;">Excluir Perfil</button>
-                            </form>                            
-                        </div>                        
+                        <a href="pag_alt_dados.php">
+                            <button type="button" class="btn btn-primary mt-3 mb-1" id="btnAltCadastrar" name="btnAltCadastrar">Alterar Cadastro</button>  
+                        </a>
+                        <br>
+                        <a href="pag_alt_senha.php">
+                            <button type="button" class="btn btn-primary mb-1" id="btnAltSenha" name="btnAltSenha">Alterar Senha</button>                        
+                        </a>
+                        <br>
+                        <form method="post" onsubmit="return confirm('Você tem certeza que deseja apagar este perfil?');" action="pag_usuario.php?deletar=<?php echo $user['id'];?>">
+                            <button type="submit" class="btn btn-danger" id="btnExcluir" name="btnExcluir">Excluir Perfil</button>
+                        </form>            
                     </div>
 
-                    <div class="col-4">                            
-                        <div class="container_info" style="padding: 100px; width: 600px;"> <!-- -->
-                            <label>Nome</label> 
-                            <input  type="text" class="form-control" id="txtNome" name="nome" disabled="true" value="<?php echo $user["nome"];?>"/>
+                    <div class="col-8"  style="padding: 0 15px 0 15px;">                            
+                        <label>Nome</label> 
+                        <input  type="text" class="form-control form-control-sm" id="txtNome" name="nome" disabled="true" value="<?php echo $user["nome"];?>"/>
 
-                            <label>E-mail</label>
-                            <input type="email" class="form-control" id="txtEmail" name="email" disabled="true" value="<?php echo $user["email"];?>"/>
+                        <label>E-mail</label>
+                        <input type="email" class="form-control form-control-sm" id="txtEmail" name="email" disabled="true" value="<?php echo $user["email"];?>"/>
 
-                            <label>Endereço</label>
-                            <input type="text" class="form-control" id="txtEndereco" name="endereco" disabled="true" value="<?php echo $user["endereco"];?>"/>
+                        <label>Endereço</label>
+                        <input type="text" class="form-control form-control-sm" id="txtEndereco" name="endereco" disabled="true" value="<?php echo $user["endereco"];?>"/>
 
-                            <label>Telefone</label>
-                            <input type="text" class="form-control" id="nrTelefone" name="telefone" disabled="true" value="<?php echo $user["telefone"];?>"/>
-                            
-                        </div>
+                        <label>Telefone</label>
+                        <input type="text" class="form-control form-control-sm" id="nrTelefone" name="telefone" disabled="true" value="<?php echo $user["telefone"];?>"/>
                     </div>
                 </div>
-            </div>
+        </div>
             <?php
             
               if(isset($_GET["deletar"])) excluir();{
