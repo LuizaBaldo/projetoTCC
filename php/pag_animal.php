@@ -82,13 +82,13 @@
 
                 <!-- CONTAINER IMG + INFO -->
                 <div class="container_body">
-                    <div class="row justify-content-around">
-                        <div class="container_img col-3" style="background-color: #66C4A9;">
-                            <img src="../img/Novo_Projeto.jpg" style="width: 100px;">
+                    <div class="row justify-content-center">
+                        <div class="container_img col-3 p-3" style="background-color: #66C4A9;">
+                            <img src="../img/Novo_Projeto.jpg" style="width: 100%;">
                         </div>
 
-                        <div class="container_about col-6" style="background-color: #66C4A9;">                           
-                            <div class="animal_info" style="padding: 0 15px 0 15px;width: 70%">
+                        <div class="container_about col-4" style="background-color: #66C4A9;">                           
+                            <div class="animal_info" style="padding: 0 15px 0 15px;width: 100%">
                                 <label>Tipo do Animal</label> 
                                 <input  type="text" class="form-control" id="txtTipoAnimal" name="tipoAnimal" disabled="true" value="<?php echo $animal["tipo_animal"];?>"/>
 
@@ -114,25 +114,25 @@
 
                 <!-- CONTIANER REALIZAR COMENTARIO + COMENTARIO -->
                 <div class="container_footer">
-                    <div class="row justify-content-around">
-                        <div class="container_comentar col-3" style="background-color: #66C4A9;">
+                    <div class="row justify-content-center">
+                        <div class="container_comentar col-3 pb-3" style="background-color: #66C4A9;">
                             <form method="post" action="guardar_comentario.php" style="display: flexbox ">
-                                <input type="text" name="nome" placeholder="nome" style="width: 22%">
+                                <input class="mt-1" type="text" name="nome" placeholder="nome" style="width: 50%;">
                                 <br>
-                                <input type="text" name="email" placeholder="email" style="width: 22%">
+                                <input class="mt-1" type="text" name="email" placeholder="email" style="width: 80%">
                                 <br>
-                                <textarea id="comentario" name="comentario" rows="5" cols="33" placeholder="Digite seu comentario"></textarea>
+                                <textarea class="rounded mt-1" id="comentario" name="comentario" rows="2" cols="40" placeholder="Digite seu comentario"></textarea>
                                 <br>
-                                <input id="submit" type="submit" value="Comentar" style=" width: 10%;">
+                                <input id="submit" type="submit" value="Comentar" style=" width: 100%;">
                                 <input type="hidden" name="id_animal" value="<?php echo $animal['id']?>">
                             </form>
                         </div>
 
-                        <div class="container_coment col-5" style="background-color: #66C4A9;">
+                        <div class="container_coment col-4 p-3" style="background-color: #66C4A9;">
                             
                                 <?php
                                     foreach ($comentarios as $comentario){
-                                    echo '<div class="row" style="background-color:;">';     
+                                    echo '<div class="row p-2" style="background-color:;">';     
                                     echo $comentario['nome'];
                                     echo '<br>';
                                     echo $comentario['conteudo'];
