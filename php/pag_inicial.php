@@ -2,6 +2,7 @@
     require_once './functions.php';
 ?>
 
+<<<<<<< HEAD
 <?php
     function getInstituicoes() {
         $con = new mysqli("localhost", "root", "", "tcc");
@@ -30,6 +31,8 @@
     $animais = getAnimais($_GET['filtro'] ?? null)
 ?>
 
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +60,7 @@
             require_once './partials/common.php';
         ?>
 
+<<<<<<< HEAD
         <div class="container_main">
             <div class="d-flex flex-wrap align-content-center">
                 <?php foreach ($instituicoes as $instituicao){
@@ -99,5 +103,7 @@
             </div>
         </div>
 
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     </body>
 </html>

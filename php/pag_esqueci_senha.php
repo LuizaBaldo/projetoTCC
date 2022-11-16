@@ -1,5 +1,6 @@
 <?php
     require_once './functions.php';
+<<<<<<< HEAD
     $user = getUserLogged();
 ?>
 <?php
@@ -31,6 +32,8 @@
         }
         mysqli_close($con); 
     }
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +46,10 @@
         <!-- icons font-awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <!-- CSS -->
+<<<<<<< HEAD
+=======
+        <link rel="stylesheet" href="../css/pag_esqueci_senha.css">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <link rel="stylesheet" href="../css/styles.css">
         <!-- js -->
         <!-- <script lang="javascript" src="../js/pag_esqueci_senha.js"></script>   -->
@@ -56,13 +63,67 @@
         <?php
             require_once './partials/common.php';
         ?>
+<<<<<<< HEAD
         <div class="container rounded p-3" style="background-color: #66C4A9; width: 30%; margin-top:10%;">
             <h3 style="text-align: center;">Esqueci a Senha</h3>
             <form method="post" action="pag_esqueci_senha.php?enviar=1" id="formEsqueci">
                 <label class="form-label">Insira seu e-mail</label>
                 <input class="form-control form-control-sm" id="txtEmail" name="txtEmail" type="email" required/>
                 <button type="submit" name="enviaEmail" class="btn mt-3" style="background-color: #4C79D5; color: white; width:100%">Enviar Email</button>
+=======
+        <div class="container rounded p-3" style="background-color: #66C4A9; width: 50%; margin-top:10%;">
+            <h3 style="text-align: center;">Esqueci a Senha</h3>
+            <form method="post" action="pag_esqueci_senha.php?enviar=1" id="formEsqueci">
+                <label class="form-label">Insira seu e-mail</label>
+                <input class="form-control form-control-sm" type="email" required />
+                <button type="button" name="EnviaEmail" class="btn mt-3" onclick="validar();" style="background-color: #4C79D5; color: white;">Enviar e-mail</button>
+                <?php if(isset($_POST["EnviaEmail"])) enviarEmail(); ?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
             </form>
         </div>
     </body>
 </html>
+<<<<<<< HEAD
+=======
+
+<script language="javaScript">
+function validar(){
+  if(txtEmail.value ==  '' 
+  || txtEmail.value.length<6 
+  || txtEmail.value.indexOf("@")<=0
+  || txtEmail.value.lastIndexOf(".") <= txtEmail.value.indexOf("@")){
+    alert("Informe um e-mail válido!");
+    txtEmail.focus();
+    txtEmail.value = "";
+    return false;
+  }
+  formEsqueci.submit();
+}
+</script>
+<?php
+  function enviarEmail(){
+    $email = $_POST["email"];
+    $con = new mysqli("localhost", "root", "", "tcc");
+    $sql = "select nome from cliente where email='$email'";
+    $retorno = mysqli_query($con, $sql);
+    if($reg = mysqli_fetch_array($retorno)){
+      $nome = $reg["nome"];
+      $assunto = "Recuperação de Senha Adot.org";
+      $mensagem = "<h4>Olá, $nome!</h4><br/><h4>Clique aqui para alterar sua senha</h4><br/><a href='http://localhost/TCC_Adot.org_2022-v3/workspace/php/altera_senha.php'>Alterar senha</a>";
+      $header = "MIME-Version: 1.0\r\n";
+      $header .= "Content-Type: text/html; charset=UTF-8\r\n";
+      $header .= "from: Contato Adot.org<contato.adotorg@gmail.com>";
+  
+      $success = mail($email, $assunto, $mensagem, $header);
+      if($success){
+          echo "Email enviado com sucesso";
+      }else{
+          echo "Ocorreu um erro!";
+      }        
+    } else {
+        echo "E-mail não cadastrado";
+    }
+    mysqli_close($con);
+  }
+?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

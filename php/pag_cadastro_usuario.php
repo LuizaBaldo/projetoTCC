@@ -25,12 +25,20 @@
 </head>
     <body>
 
+<<<<<<< HEAD
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
 
         <div class="container_main">
+<<<<<<< HEAD
             <div class="row justify-content-center me-0">
+=======
+            <div class="row justify-content-center">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                 <div class="card w-75" style="background-color: #66C4A9;">
                     <h1 class="text-center">Cadastrar usuário</h1>
                     
@@ -114,4 +122,9 @@
     echo "<script lang='javascript'>window.location.href='pag_login.php';</script>";
     mysqli_close($con);
   }
+<<<<<<< HEAD
 ?>
+=======
+?>
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

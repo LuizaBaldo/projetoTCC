@@ -25,10 +25,17 @@
 </head>
     <body>
 
+<<<<<<< HEAD
         <?php
             require_once './partials/common.php';
         ?>
         
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+        <?php
+            require_once './partials/common.php';
+        ?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <div class="container rounded py-2" style="background-color: #66C4A9;">
             <h1 class="text-center">Cadastrar Animal</h1>
             <div id="formulario">
@@ -60,8 +67,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
+<<<<<<< HEAD
                                 <label class="form-label">Idade do animal em meses</label>
                                 <input type="text" class="form-control form-control-sm" id="txtIdadeAnimal" placeholder="Digite a idade do animal em meses" name="idadeAnimal"/>
+=======
+                                <label class="form-label">Idade do animal em anos ou meses</label>
+                                <input type="text" class="form-control form-control-sm" id="txtIdadeAnimal" placeholder="Digite a idade do animal em anos" name="idadeAnimal"/>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                             </div>
     
                             <div class="col-md-6 mb-3">
@@ -113,4 +125,8 @@
     echo "<script lang='javascript'>window.location.href='pag_instituicao.php';</script>";
     mysqli_close($con);
   }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

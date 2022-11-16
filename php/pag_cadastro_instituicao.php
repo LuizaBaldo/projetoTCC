@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
     <head>
 
         <!-- bootstrap 5 -->
@@ -25,11 +26,38 @@
     </head>
     
     <body>
+=======
+<head>
+
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- JavaScript bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- icons font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/pag_cadastro_usuario.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- js -->
+    <script lang="javascript" src="../js/pag_cadastro_instituicao.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adot.org</title>
+</head>
+    <body>
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
         <div class="container_main">
+<<<<<<< HEAD
             <div class="row justify-content-center me-0">
+=======
+            <div class="row justify-content-center">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                 <div class="card w-75" style="background-color: #66C4A9;">
                     <h1 class="text-center">Cadastrar Instituição</h1>
 
@@ -69,6 +97,11 @@
                                     <label class="form-label">Confirme a senha</label>
                                     <input type="password" class="form-control form-control-sm" placeholder="Confirme a senha" id="txtConfirSenha" name="confirmaSenha"/>
                                 </div>
+<<<<<<< HEAD
+=======
+                              
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                             </div>
 
                             <br/>
@@ -102,8 +135,13 @@
     $email  = $_POST["email"];
     $senha  = password_hash($_POST["senha"], PASSWORD_BCRYPT);
     $cnpj = $_POST["cnpj"];
+<<<<<<< HEAD
     $tipo = 'INSTITUICAO';
     $emailexistente = "select count(*) as count from usuario where email = '$email'";
+=======
+    $emailexistente = "select count(*) as count from usuario where email = '$email'";
+    $tipo = 'INSTITUICAO';
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     $con  = new mysqli("localhost", "root", "", "tcc");
     $retorno = mysqli_query($con, $emailexistente);
     $resultado = mysqli_fetch_array($retorno);
@@ -111,10 +149,15 @@
         echo "<script lang='javascript'>alert('email já cadastrado no sistema');</script>";
         return;
     }   
+<<<<<<< HEAD
     $sql = "insert into usuario(nome, endereco, telefone, cnpj, email, senha, tipo) values (?, ?, ?, ?, ? ,? ,? )";
     $statement = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($statement, 'sssssss', $nome, $endereco, $telefone, $cnpj, $email, $senha, $tipo);
     mysqli_stmt_execute($statement);
+=======
+    $sql = "insert into usuario(nome, endereco, telefone, cnpj, email, senha, tipo) values ('$nome', '$endereco', '$telefone', '$cnpj', '$email', '$senha', '$tipo')";
+    mysqli_query($con, $sql);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     echo "<script lang='javascript'>window.location.href='pag_login.php';</script>";
     mysqli_close($con);
   }

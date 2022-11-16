@@ -5,6 +5,7 @@
         exit();
     }
     
+<<<<<<< HEAD
     $user = getUserLogged();
 ?>
 
@@ -63,6 +64,9 @@
         } else 
             echo "No files have been chosen.";
     }
+=======
+    $user = getUserLogged($_SESSION['id']);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +93,10 @@
 </head>
     <body>
 
+<<<<<<< HEAD
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
@@ -96,6 +104,7 @@
         <div class="usuario_container container rounded p-3" style="background-color: #66C4A9;">
             <div class="usuario_content">
                 <div class="row">
+<<<<<<< HEAD
 
                     <div class="col-4">
                         <div class="usuario_img">
@@ -113,6 +122,19 @@
                     <div class="col-8">
                         <div id="formulario">
                             <form method="post" action="pag_alt_dados.php?alterar=<?php echo $user["id"];?>" id="formAlterarInfo" style="padding: 0 15px 0 15px; width: 70% ">
+=======
+                    <div class="col-4">
+                        <div class="usuario_img">
+                            <img src="../img/fotoPerfil.png" alt="" id="usuario_foto" style="width: 100%;">
+                            <a href="pag_alt_dados.php">
+                                <button type="button" class="btn btn-primary mt-3" id="btnAltFoto" name="btnAltFoto">Alterar Foto</button>  
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div id="formulario">
+                            <form method="post" action="pag_alt_dados.php?alterar=<?php echo $user["id"];?>" id="formAlterarInfo" style="padding: 0 15px 0 15px; width: 100% ">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                                 <div class="form row">
                                     <div class="form-group mb-3">
                                         <label>Nome</label>
@@ -135,7 +157,11 @@
                                     </div>
 
                                     <div class="form-group mb-3">
+<<<<<<< HEAD
                                         <button type="button" class="btn btn-success mt-2" id="btnSalvarCadastro" name="btnSalvarCadastro" onclick="alterarInfoCadastro();">Salvar cadastro </button>
+=======
+                                        <button type="button" class="btn btn-primary mt-2" id="btnSalvarCadastro" name="btnSalvarCadastro" onclick="alterarInfoCadastro();">Salvar cadastro </button>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                                         <a href="pag_usuario.php">
                                             <button type="button" class="btn btn-danger mt-2" id="btnCancelarCadastro" name="btnCancelarCadastro" onclick="voltar()">Cancelar</button>
                                         </a>
@@ -157,11 +183,18 @@
         $endereco = $_POST["endereco"];
         $telefone = $_POST["telefone"];
         $con  = new mysqli("localhost", "root", "", "tcc");
+<<<<<<< HEAD
         $sql  = "UPDATE usuario SET nome=?, email=? , endereco=?, telefone=? WHERE id=?";
         $statement = mysqli_prepare($con, $sql);
         mysqli_stmt_bind_param($statement, 'sssss', $nome, $email, $endereco, $telefone, $id);
         mysqli_stmt_execute($statement);
         mysqli_close($con);
+=======
+        $sql  = "UPDATE usuario SET nome='$nome', email='$email', endereco='$endereco', telefone='$telefone' WHERE id='$id'";
+        mysqli_query($con, $sql);
+        mysqli_close($con);
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         echo "<script lang='javascript'>window.location.href='pag_usuario.php';</script>";
     }
 ?>

@@ -4,7 +4,11 @@
         header("location: pag_login.php");
         exit();
     }
+<<<<<<< HEAD
     $user = getUserLogged();
+=======
+    $user = getUserLogged($_SESSION['id']);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     if($user["tipo"] == 'USUARIO'){
         header("location: pag_inicial.php");
         exit();
@@ -26,7 +30,11 @@
 
     }
     $animais = getAnimal($user);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     
 ?>
 
@@ -52,14 +60,40 @@
 </head>
     <body>
 
+<<<<<<< HEAD
+=======
+
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
 
         <div class="container"> 
             <div class="d-flex flex-wrap align-content-center">
+<<<<<<< HEAD
                 
             <?php imprimirAnimais($animais)?>
+=======
+                <?php foreach ($animais as $animal){
+                    echo "<div class='col-6 text-center p-3 '>";
+                        echo '<a href="pag_animal.php?id='.$animal['id'].'" ; style="text-decoration: none; color:inherit; ">';
+                            echo "<div class='border'>";
+                                echo 'tipo do animal: '.$animal['tipo_animal'];
+                                echo '<br>';
+                                echo 'nome do animal: '.$animal['nome_animal'];
+                                echo '<br>';
+                                echo 'idade do animal: '.$animal['idade'];
+                                echo '<br>';
+                                echo 'sexo do animal: '.$animal['sexo']; 
+                                echo '<br>';
+                                echo 'raça do animal: '.$animal['raca'];
+                                echo '<br>';
+                            echo '</div>';
+                        echo '</a>';
+                    echo '</div>';
+                }?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 
             </div>
         </div>

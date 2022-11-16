@@ -3,6 +3,7 @@
 ?>
 
 <?php
+<<<<<<< HEAD
     $instituicao = buscaInstituicaoId($_GET['id']);
 ?>
 
@@ -18,6 +19,16 @@
         return $rows;
     }
     $animais = getAnimal($_GET['id']);
+=======
+    function buscaInstituicaoId($id){
+        $con = new mysqli("localhost", "root", "", "tcc");
+        $sql = "select * from usuario where id = $id ";
+        $retorno = mysqli_query($con, $sql);
+        $instituicao = mysqli_fetch_array($retorno);
+        return $instituicao;
+    }
+    $instituicao = buscaInstituicaoId($_GET['id']);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +53,7 @@
 </head>
     <body>
 
+<<<<<<< HEAD
         <?php
             require_once './partials/common.php';
         ?>
@@ -147,3 +159,33 @@
     })
 
 </script>
+=======
+
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+        <?php
+            require_once './partials/common.php';
+        ?>
+        <div class="container"> 
+            <div class="d-flex flex-wrap align-content-center">
+                <?php 
+                    echo "<div class='col-6 text-center p-3 '>";
+                        echo "<div class='border'>";
+                            echo '<h2>';
+                            echo 'nome da instituicao: '.$instituicao['nome'];
+                            echo '<br>';
+                            echo 'nome da instituicao: '.$instituicao['endereco'];
+                            echo '<br>';
+                            echo 'telefone da instituicao: '.$instituicao['telefone'];
+                            echo '<br>';
+                            echo 'email da instituicao: '.$instituicao['email']; 
+                            echo '<br>';
+                            echo 'cnpj da instituicao: '.$instituicao['cnpj'];
+                        echo '</div>';
+                    echo '</div>';
+                ?>
+            </div>
+        </div>
+    </body>
+</html>
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

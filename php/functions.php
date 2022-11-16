@@ -1,14 +1,19 @@
 <?php
     session_start();
+<<<<<<< HEAD
     function getUserLogged(){
         if(isset($_SESSION["id"])==false){
             return null;
         }
         $id = $_SESSION['id'];
+=======
+    function getUserLogged($id){
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         $con = new mysqli("localhost", "root", "", "tcc");
         $retorno = mysqli_query($con, "select * from usuario where id='$id'");
         return mysqli_fetch_array($retorno);
     }
+<<<<<<< HEAD
 
     function buscaAnimalPorId($id){
         $con = new mysqli("localhost", "root", "", "tcc");
@@ -48,3 +53,5 @@
     }
 ?>
     
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

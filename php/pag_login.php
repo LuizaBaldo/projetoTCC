@@ -2,6 +2,7 @@
     require_once './functions.php';
 ?>
 
+<<<<<<< HEAD
 <?php
   function logarUsuario(){
     $email = $_POST["email"];
@@ -30,6 +31,8 @@
 <?php
   if(isset($_GET["logar"])) logarUsuario();
 ?>
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,10 +56,17 @@
 </head>
     <body>
 
+<<<<<<< HEAD
         <?php
             require_once './partials/common.php';
         ?>
         
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+        <?php
+            require_once './partials/common.php';
+        ?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <div class="container_main">
           <div class="row justify-content-around">
             <!-- CONTAINER LOGIN -->
@@ -77,6 +87,12 @@
                     </div>
                 </form>
 
+<<<<<<< HEAD
+=======
+                <?php
+                  if(isset($_GET["logar"])) logarUsuario();
+                ?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                 <div class="d-grid gap-2 col-4 mx-auto">
                     <p></p>
                     <a href="pag_esqueci_senha.php" id="esqueciSenha" class="btn btn-link" style="background-color: #4C79D5; color: white;">Esqueci a senha</a>
@@ -92,5 +108,38 @@
             </div>            
           </div>
         </div>
+<<<<<<< HEAD
     </body>
 </html>
+=======
+
+        
+
+    </body>
+</html>
+
+<?php
+  function logarUsuario(){
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+    $con = new mysqli("localhost", "root", "", "tcc");
+    $sql = "select * from usuario where email='$email'";
+
+    $retorno = mysqli_query($con, $sql);
+    if($reg = mysqli_fetch_array($retorno)){
+      if(password_verify($senha, $reg['senha'])){
+        $_SESSION["id"] = $reg["id"];
+        $id = session_id();
+        echo "<script lang='javascript'>window.location.href='pag_inicial.php?';</script>";
+      }
+      else{
+        echo "<br> <center> <h3 style='margin-top:20px;'>E-mail ou senha inválidos!</h3></center>";
+      }
+      
+    } else {
+      echo "<br> <center> <h3 style='margin-top:20px;'>E-mail ou senha inválidos!</h3></center>";
+    }
+    mysqli_close($con);    
+  }
+?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

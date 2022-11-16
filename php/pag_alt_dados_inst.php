@@ -5,6 +5,7 @@
         exit();
     }
 
+<<<<<<< HEAD
     $user = getUserLogged();
 ?>
 
@@ -64,6 +65,11 @@
             echo "No files have been chosen.";
     }
 ?>
+=======
+    $user = getUserLogged($_SESSION['id']);
+?>
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,6 +94,10 @@
 </head>
     <body>
 
+<<<<<<< HEAD
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
@@ -95,6 +105,7 @@
         <div class="usuario_container container">
             <div class="usuario_content">
                 <div class="row rounded py-2" style="background-color: #66C4A9;">
+<<<<<<< HEAD
                     
                     <div class="col-4">
                         <div class="usuario_img">
@@ -111,6 +122,20 @@
                         <div id="formulario">
                             <form method="post" action="pag_alt_dados_inst.php?alterar=<?php echo $user["id"];?>" id="formAlterarInfo" style="padding: 0 15px 0 15px; width: 70% ">
                                 <div class="form row">
+=======
+                    <div class="col-4">
+                        <div class="usuario_img">
+                            <img src="../img/fotoPerfil.png" class="rounded" alt="" id="usuario_foto" style="width: 100%;">
+                            <a href="pag_alt_dados_inst.php">
+                                <button type="button" class="btn btn-primary mt-3" id="btnAltFoto" name="btnAltFoto">Alterar Foto</button>  
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div id="formulario">
+                            <form method="post" action="pag_alt_dados_inst.php?alterar=<?php echo $user["id"];?>" id="formAlterarInfo" style="padding: 0 15px 0 15px;">
+                                <div class="form">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                                     <div class="form-group">
                                         <label>Nome</label>
                                         <input type="text" class="form-control form-control-sm" id="txtNome" name="nome" value="<?php echo $user["nome"];?>"/>
@@ -137,7 +162,11 @@
                                     </div>
 
                                     <div class="form-group">
+<<<<<<< HEAD
                                         <button type="button" class="btn btn-success mt-3" id="btnSalvarCadastro" name="btnSalvarCadastro" onclick="alterarInfoCadastro();">Salvar cadastro </button>
+=======
+                                        <button type="button" class="btn btn-primary mt-3" id="btnSalvarCadastro" name="btnSalvarCadastro" onclick="alterarInfoCadastro();">Salvar cadastro </button>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                                         <a href="pag_instituicao.php">
                                             <button type="button" class="btn btn-danger mt-3" id="btnCancelarCadastro" name="btnCancelarCadastro" onclick="voltar()">Cancelar</button>
                                         </a>
@@ -160,10 +189,15 @@
         $cnpj = $_POST["cnpj"];
         $telefone = $_POST["telefone"];
         $con  = new mysqli("localhost", "root", "", "tcc");
+<<<<<<< HEAD
         $sql  = "UPDATE usuario SET nome=? , email=? , cnpj=? ,endereco=? , telefone=? WHERE id=? ";
         $statement = mysqli_prepare($con, $sql);
         mysqli_stmt_bind_param($statement, 'ssssss', $nome, $email, $cnpj, $endereco, $telefone, $id);
         mysqli_stmt_execute($statement);
+=======
+        $sql  = "UPDATE usuario SET nome='$nome', email='$email', cnpj='$cnpj',endereco='$endereco', telefone='$telefone' WHERE id='$id'";
+        mysqli_query($con, $sql);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         mysqli_close($con);
 
         echo "<script lang='javascript'>window.location.href='pag_instituicao.php';</script>";

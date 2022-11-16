@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     require_once './functions.php';
 
     if(isset($_SESSION["id"])==false){
@@ -6,14 +10,21 @@
         exit();
 
     }
+<<<<<<< HEAD
     $user = getUserLogged();
+=======
+    $user = getUserLogged($_SESSION["id"]);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     if($user["tipo"] =='INSTITUICAO'){
         header("location: pag_inicial.php");
         exit();
     }
 ?>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +47,15 @@
 </head>
     <body>
 
+<<<<<<< HEAD
+=======
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
         
+<<<<<<< HEAD
         <div class="container_usuario" style="padding-left: 20rem; padding-top: 2rem;">
             <div class="card w-75 p-0" style="background-color: #66C4A9; height: 34rem;">
                 <div class="row">
@@ -82,6 +98,42 @@
                     </div>
                 </div>
             </div>
+=======
+        <div class="container_usuario container">
+                <div class="row rounded py-2" style="background-color: #66C4A9;">
+                    <div class="col-4">
+                        <div class="container_img">
+                            <img class="rounded" src="../img/img_avatar1.png" alt="" id="usuario_foto" style="width: 100%;">
+                        </div>
+                        <a href="pag_alt_dados.php">
+                            <button type="button" class="btn btn-primary mt-3 mb-1" id="btnAltCadastrar" name="btnAltCadastrar">Alterar Cadastro</button>  
+                        </a>
+                        <br>
+                        <a href="pag_alt_senha.php">
+                            <button type="button" class="btn btn-primary mb-1" id="btnAltSenha" name="btnAltSenha">Alterar Senha</button>                        
+                        </a>
+                        <br>
+                        <form method="post" onsubmit="return confirm('Você tem certeza que deseja apagar este perfil?');" action="pag_usuario.php?deletar=<?php echo $user['id'];?>">
+                            <button type="submit" class="btn btn-danger" id="btnExcluir" name="btnExcluir">Excluir Perfil</button>
+                        </form>            
+                    </div>
+
+                    <div class="col-8"  style="padding: 0 15px 0 15px;">                            
+                        <label>Nome</label> 
+                        <input  type="text" class="form-control form-control-sm" id="txtNome" name="nome" disabled="true" value="<?php echo $user["nome"];?>"/>
+
+                        <label>E-mail</label>
+                        <input type="email" class="form-control form-control-sm" id="txtEmail" name="email" disabled="true" value="<?php echo $user["email"];?>"/>
+
+                        <label>Endereço</label>
+                        <input type="text" class="form-control form-control-sm" id="txtEndereco" name="endereco" disabled="true" value="<?php echo $user["endereco"];?>"/>
+
+                        <label>Telefone</label>
+                        <input type="text" class="form-control form-control-sm" id="nrTelefone" name="telefone" disabled="true" value="<?php echo $user["telefone"];?>"/>
+                    </div>
+                </div>
+        </div>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
             <?php
             
               if(isset($_GET["deletar"])) excluir();{

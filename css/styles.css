@@ -21,12 +21,15 @@ label{
 
 }
 
+<<<<<<< HEAD
 * {
     box-sizing: border-box;
     /* linha abaixo está sendo usada para debuggar o css, favor nao apagar */
     /* outline: 1px solid red !important; */
   }
 
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 .navbar{
     margin: 0;
     background-color: #4C79D5;

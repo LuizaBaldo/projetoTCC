@@ -1,11 +1,19 @@
 <?php
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     require_once './functions.php';
 
     if(isset($_SESSION["id"])==false){
         header("location: pag_login.php");
         exit();
     }
+<<<<<<< HEAD
     $user = getUserLogged();
+=======
+    $user = getUserLogged($_SESSION['id']);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     if($user["tipo"] == 'USUARIO'){
         header("location: pag_inicial.php");
         exit();
@@ -33,7 +41,12 @@
     <title>Adot.org</title>
 </head>
     <body>
+<<<<<<< HEAD
     
+=======
+
+        <!-- ========== TUDO QUE TEM "#" PRECISA COLOCAR UM LINK E MUDAR O PHP ========== -->
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
         <?php
             require_once './partials/common.php';
         ?>
@@ -43,8 +56,13 @@
                 <div class="row rounded py-2" style="background-color: #66C4A9;">
                     <div class="col-4">
                         <div class="instituicao_img">
+<<<<<<< HEAD
                             <img height="500" src="<?php echo $user['pathImagem']?>" id="instituicao_foto" width="100%">    
                             <br>
+=======
+                            <img src="../img/fotoPerfil.png" class="rounded" alt="" id="instituicao_foto" style="width: 100%;">
+                            
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                             <a href="pag_alt_dados_inst.php">
                                 <button type="button" class="btn btn-primary mt-3 mb-1" id="btnAltCadastrar" name="btnAltCadastrar">Alterar Cadastro</button>  
                             </a>
@@ -74,22 +92,37 @@
 
                             <label>Telefone</label>
                             <input type="text" class="form-control form-control-sm" id="nrTelefone" name="telefone" disabled="true" value="<?php echo $user["telefone"];?>"/>
+<<<<<<< HEAD
                             
                             <div class="d-flex justify-content-between">
 
+=======
+                           
+                            <div class="d-flex justify-content-between">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                                 <a href="pag_cadastro_animal.php">
                                     <button type="submit" class="btn btn-primary mt-3">Cadastrar Animal</button>
                                 </a>
 
                                 <a href="pag_animais_instituicao.php">
+<<<<<<< HEAD
                                     <button type="submit" class="btn btn-primary mt-3 mx-3">Visualizar Animais</button>
                                 </a>
 
+=======
+                                    <button type="submit" class="btn btn-primary mt-3">Visualizar Animais</button>
+                                </a>
+                                
+                                <a href="pag_alt_dados_animal.php">
+                                    <button type="submit" class="btn btn-primary mt-3">Alterar Animais</button>
+                                </a>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <?php
               if(isset($_GET["deletar"])) excluir();{
@@ -97,6 +130,16 @@
             ?>
             
         </div>
+=======
+            <?php
+            
+              if(isset($_GET["deletar"])) excluir();{
+                
+            }
+            ?>
+        </div>
+
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     </body>
 </html>
 
@@ -109,4 +152,8 @@
         echo "<script lang='javascript'>window.location.href='sair.php';</script>";
         mysqli_close($con);
     }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd

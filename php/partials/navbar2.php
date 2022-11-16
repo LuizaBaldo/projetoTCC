@@ -3,7 +3,11 @@
     $user = null;
     if(isset($_SESSION["id"]) == true){
         $has_session = true;
+<<<<<<< HEAD
         $user = getUserLogged();
+=======
+        $user = getUserLogged($_SESSION["id"]);
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
     }
     
     
@@ -11,10 +15,24 @@
 
 <div class="header">  
     <nav class="navbar navbar-light mb-3" style="background-color: #4C79D5;">                
+<<<<<<< HEAD
         <div class="container-fluid" id="header_container">
             <a href="pag_inicial.php"><img src="../img/Novo_Projeto.png" id="logo" style="width: 100px;"/></a>
 
                 <div class="menu fs-5">
+=======
+        <div class="container-fluid" id="header_conteainer">
+            <a href="pag_inicial.php"><img src="../img/Novo_Projeto.png" id="logo" style="width: 100px;"/></a>
+            
+
+                <!-- Barra de Consultas -->
+                <form action="pag_exibicao_animais.php" method="GET">
+                                <input id="search" class="form-control form-control-sm" type="text" placeholder="Pesquise um animal" name="filtro" style="height:30px; width:100%">
+                                <input id="submit" type="submit" value="Search" style="display: none; width: 0%;">
+                </form>
+
+                <div class="menu">
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
                     <nav class="navbar navbar-expand-lg navbar-dark m-3" style="background-color: #4C79D5;">
                         <div class="container-fluid text-xs-center">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -40,6 +58,7 @@
                         </div>
                     </nav>
                 </div>
+<<<<<<< HEAD
                 
                 <!-- Barra de Consultas -->
                 <div class="container_barraPesquisa w-25">
@@ -48,6 +67,8 @@
                         <input id="submit" type="submit" value="Search" style="display: none; width: 0%;">
                     </form>                    
                 </div>
+=======
+>>>>>>> 2e0e58766551ba90e70ed6a739f9bf1880cacfcd
 
                 <?php
                     if($has_session === false){
